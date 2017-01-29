@@ -1,5 +1,8 @@
 'use strict';
 
 module.exports = function rk() {
-  return Array.prototype.slice.call(arguments).join(':');
+    var result = arguments[0];
+    for (var i = 1, len = arguments.length; i < len; i++)
+        result += ':' + arguments[i];
+    return result;
 };
